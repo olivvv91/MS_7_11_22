@@ -1,3 +1,9 @@
+#### Used in MS under review 
+#### Spatial niche segregation between bird species in the Białowieża National Park (NE Poland)
+####Oliwia Karpińska1*, Katarzyna Kamionka-Kanclerska1, Patryk Czortek2, Marcin K. Dyderski3, Dorota Czeszczewik1
+
+
+
 
 ####libs####
 library(vegan)
@@ -28,7 +34,7 @@ sect.trees2021<-as.data.frame(subset(t11, t11$year=="2021"))# 2021
 sect.trees2020[,c(1:5)]==sect.trees2021[,c(1:5)]
 
 colnames(sect.trees2021)
-sect.deco.2020<-decostand(sect.trees2020[,c(6:53)], "pa")#transformation for year�
+sect.deco.2020<-decostand(sect.trees2020[,c(6:53)], "pa")#transformation for year…
 sect.deco.2021<-decostand(sect.trees2021[,c(6:53)], "pa")
 
 ptaki.sumy<-decostand(sect.deco.2020+sect.deco.2021, "pa")#suming years
@@ -123,7 +129,7 @@ rowSums(dane.carp)
 dane.carp<-dane.sieci.carpinus[-c(1,3,4,5,9,12,16,23,24,25,33,34,43,48)]
 
 dane.carpinus.deco<-decostand(dane.carp[-c(13,14),], "normalize")
-mds3<-metaMDS(dane.carpinus.deco)#z transformacją lepiej
+mds3<-metaMDS(dane.carpinus.deco)#z transformacjÄ… lepiej
 spec.scores.carpinus<-as.data.frame(cbind(mds3$species[,1], mds3$species[,2]))
 site.scores.carpinus<-as.data.frame(cbind(mds3$points[,1], mds3$points[,2]))
 rownames(spec.scores.carpinus)
@@ -150,7 +156,7 @@ rowSums(dane.tilia)
 
 dane.tilia<-dane.sieci.tilia[-c(2:5,9,19,23:27,34,40,43,45,47,48)]
 
-dane.tilia.deco<-decostand(dane.tilia[-c(13,14),], "normalize")# z transformacją lepiej
+dane.tilia.deco<-decostand(dane.tilia[-c(13,14),], "normalize")# z transformacjÄ… lepiej
 mds4<-metaMDS(dane.tilia.deco)
 spec.scores.tilia<-as.data.frame(cbind(mds4$species[,1], mds4$species[,2]))
 site.scores.tilia<-as.data.frame(cbind(mds4$points[,1], mds4$points[,2]))
@@ -179,7 +185,7 @@ rowSums(dane.acer)
 dane.acer<-dane.sieci.acer[-c(2,3,5,9,10,12,14,15,19,20,23:25,27,29,30,32:35,37,39,41,44,46,49)]
 
 
-dane.acer.deco<-decostand(dane.acer[-c(13,14,17),], "normalize") #z transformacją lepiej
+dane.acer.deco<-decostand(dane.acer[-c(13,14,17),], "normalize") #z transformacjÄ… lepiej
 mds5<-metaMDS(dane.acer.deco)
 spec.scores.acer<-as.data.frame(cbind(mds5$species[,1], mds5$species[,2]))
 site.scores.acer<-as.data.frame(cbind(mds5$points[,1], mds5$points[,2]))
@@ -232,7 +238,7 @@ ggplot(sajty.quercus, aes(x=NMDS1, y=NMDS2, col=factor(kolorki.quercus)))+
 
 
 
-####mds picea#### z transformacją lepiej
+####mds picea#### z transformacjÄ… lepiej
 colSums(dane.sieci.picea)
 rowSums(dane.picea)
 
